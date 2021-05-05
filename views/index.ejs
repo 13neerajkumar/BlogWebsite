@@ -1,0 +1,29 @@
+<%- include('./partials/header') %>
+<%- include('./navbar') %>
+
+<h2 style=" margin: 20px;">All Blogs</h2>
+<% blogs.forEach(blog=>{ %>
+
+<div class="card mb-3 " style="max-width: 830px; margin: 25px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGJsb2clMjBib29rfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Unable to load image" >
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= blog.title %></h5>
+        <p class="card-text"><%= blog.content.slice(0,90) %></p>
+        <p class="card-text"><small class="text-muted">Published At : <%=blog.dateTime %></small></p>
+        <a href="/singleblog/<%= blog._id %>" class="btn btn-primary">Read More</a>
+        <a href="/delete/<%= blog._id %>" class="btn btn-danger">Delete</a>
+        <a href="/edit/<%= blog._id %>" class="btn btn-warning">Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% }) %>
+
+
+
+<%- include('./partials/footer') %>

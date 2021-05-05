@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+<%- include('./navbar') %>
+
+<div class="container mt-3">
+    <div class="card mt-3" style="width: 45rem;">
+        <div class="card-body">
+          <p class="card-title muted">Published At : <%=blog.dateTime %></p>
+          <h5 class="card-title"><%=blog.title %></h5>
+          <p class="card-text"><%=blog.content %></p>
+         
+        </div>
+      </div>
+</div>
+
+<%- include('./partials/footer') %>
